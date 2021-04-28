@@ -236,6 +236,8 @@ main() {
 
     wait_for_resource "$main_resource" "$main_name"
 
+    echo "Exiting container"
+
     exit 0
 }
 
