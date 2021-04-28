@@ -8,6 +8,9 @@ jobs:
     name: Push to GHCR
     runs-on: ubuntu-latest
     steps:
+      - name: Get latest release version number
+        id: get_version
+        uses: battila7/get-version-action@v2
       - name: Check out repo
         uses: actions/checkout@v2
       - name: Setup docker builder
@@ -25,4 +28,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags:  ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}
+          tags:  ghcr.io/${{ github.repository }}:${{ steps.get_version.outputs.version }}
