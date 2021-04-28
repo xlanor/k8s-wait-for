@@ -6,6 +6,8 @@
 
 # k8s-wait-for
 
+Forked from Michal Orzechowski (https://github.com/groundnuty/k8s-wait-for/). Published as an own repo to have more control over it.
+
 > This tool is still actively used and working stably despite not too frequent commits! Pull requests are most welcome!
 
 A simple script that allows waiting for a k8s service, job or pods to enter the desired state.
