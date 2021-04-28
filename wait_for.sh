@@ -140,6 +140,7 @@ get_job_state() {
     get_job_state_name="$1"
     get_job_state_output=$(kubectl describe jobs "$get_job_state_name" $KUBECTL_ARGS 2>&1)
     if [ $? -ne 0 ]; then
+        echo "kubectl error" >&2
         echo "$get_job_state_output" >&2
         kill -s TERM $TOP_PID
     elif [ $DEBUG -ge 2 ]; then
